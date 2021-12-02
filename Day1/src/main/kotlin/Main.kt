@@ -1,7 +1,5 @@
 fun main() {
-    val input = {}.javaClass.getResource("/input.txt")!!
-        .readText()
-        .split('\n')
+    val input = getResource("/input.txt")
         .map { it.trim().toInt() }
 
     println("Part 1: ${part1(input)}")

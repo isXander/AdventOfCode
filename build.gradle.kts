@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "1.6.0" apply false
 }
 
-subprojects {
+allprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
     group = "dev.isxander"
@@ -15,6 +15,14 @@ subprojects {
     val implementation by configurations
 
     dependencies {
-        implementation(kotlin("stdlib"))
+        implementation(kotlin("stdlib","1.6.0"))
+    }
+}
+
+subprojects {
+    val implementation by configurations
+
+    dependencies {
+        implementation(rootProject)
     }
 }
